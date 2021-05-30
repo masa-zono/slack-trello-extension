@@ -1,0 +1,17 @@
+{
+  "name": "trelloList",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "trelloの期限が設定されているタスクを取得し、Slackで表示する",
+  "content_scripts": [
+    {
+      "matches": ["https://app.slack.com/*"],
+      "js": ["src/lib/browser-polyfill.js", "src/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default title": "trelloList",
+    "default_popup": "src/popup/popup.html"
+  },
+  "permissions": ["alarms", "storage"]
+}
